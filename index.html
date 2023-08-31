@@ -21,6 +21,25 @@
         <div class="container">
             <h1> {{ title }}</h1>
             <hr>
+            <!-- INPUT -->
+            <div class="input-group mb-3 w-50 mx-auto">
+                <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Inserire una nuova task" 
+                aria-label="Recipient's username" 
+                aria-describedby="basic-addon2"
+                v-model = 'newTask.task'
+                />
+                <button 
+                class="input-group-text" 
+                id="basic-addon2"
+                @click="addNewTask()">
+                    Aggiungi
+                </button>
+            </div>
+            <!-- LIST -->
+          </div>
             <div class="todo-list-div">
                 <ul class="todo-list">
                     <li 

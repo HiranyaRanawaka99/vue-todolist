@@ -22,13 +22,25 @@ createApp({
                     task: 'Fare la spesa',
                     done: true,
                 },
-            ]
+            ],
+
+            newTask:
+                {
+                    task: '',
+                    done: true,
+                },
+
         }
     },
 
     methods: {
-     deleteTask (index) {
-        this.todoList.splice(index, 1);
-     }
-    }
+        deleteTask(index) {
+            this.todoList.splice(index, 1);
+        },
+
+        addNewTask() {
+            const copyNewTask = { ...this.newTask }
+            this.todoList.unshift(copyNewTask);
+        },
+    },
 }).mount('#app')
