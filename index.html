@@ -34,28 +34,47 @@
                 <button 
                 class="input-group-text" 
                 id="basic-addon2"
-                @click="addNewTask()">
+                @click="addNewTask()"
+                >
                     Aggiungi
                 </button>
             </div>
+            <!-- ALERT -->
+            <div 
+            class="alert"
+            :class="'alert-' + alert.color"
+            v-if = "alert.show == true"
+            role="alert">
+           {{ alert.message }}
+           <span class="cursor-pointer">
+            <i
+            class="bi bi-x-circle-fill"
+            @click="deleteAlert()">
+            </i>
+        </span>
+          </div>
+
             <!-- LIST -->
+            <!-- v-if : se la condizione è vera, stampami la lista, altrimenit 'nessun elemento...' -->
             <div class="todo-list-div">
-                <ul class="todo-list">
+                <ul class="todo-list"
+                v-if = "todoList.length"
+                >
                     <li 
                     class = "todo-element d-flex justify-content-between"
                     v-for="(todoElement, index) in todoList"
                     :class ="(todoElement.done == true) ? 'strike-element' : ''"> 
                     {{todoElement.task}} 
                     
-                    <span class="cursor-pointer">
-                        <i 
-                        class="bi bi-x-circle-fill"
-                        @click="deleteTask(index)">
-                        </i>
-                    </span>
-
+                        <span class="cursor-pointer">
+                            <i
+                            class="bi bi-x-circle-fill"
+                            @click="deleteTask(index)">
+                            </i>
+                        </span>
                     </li>
                  </ul>
+                 <h3 v-else class="mt-5">Nessun elemento nella lista</h3>
             </div>
         </div>
         
