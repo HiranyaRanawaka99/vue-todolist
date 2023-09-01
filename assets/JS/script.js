@@ -16,11 +16,11 @@ createApp({
                 },
                 {
                     task: 'Studiare',
-                    done: true,
+                    done: false,
                 },
                 {
                     task: 'Fare la spesa',
-                    done: true,
+                    done: false,
                 },
             ],
 
@@ -44,6 +44,10 @@ createApp({
         deleteTask(index) {
             this.todoList.splice(index, 1);
         },
+        // guardare video - metodo --> =@click todoElement.done != todoElement.done
+        doneTodo (todoElement) {
+
+        },
         addNewTask() {
             const copyNewTask = { ...this.newTask }
 
@@ -63,9 +67,6 @@ createApp({
         deleteAlert () {
             this.alert.show = false;
         },
-
-
-
         enterMethod () {
 
         }
