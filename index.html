@@ -61,9 +61,10 @@
                 v-if = "todoList.length"
                 >
                     <li 
-                    class = "todo-element d-flex justify-content-between"
+                    class = "todo-element d-flex justify-content-between cursor-pointer "
                     v-for="(todoElement, index) in todoList"
-                    :class ="(todoElement.done == true) ? 'strike-element' : ''"> 
+                    :class ="(todoElement.done == true) ? 'strike-element' : ''"
+                    @click = "todoElement.done = !todoElement.done"> 
                     {{todoElement.task}} 
                     
                         <span class="cursor-pointer">
