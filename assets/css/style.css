@@ -1,3 +1,7 @@
 .strike-element {
     text-decoration: line-through;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}

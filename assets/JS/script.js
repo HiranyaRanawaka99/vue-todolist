@@ -27,7 +27,7 @@ createApp({
             newTask:
                 {
                     task: '',
-                    done: true,
+                    done: '',
                 },
 
         }

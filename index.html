@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class= 'wrapper' id="app">
-        <div class="container">
+        <div class="todo-container m-5">
             <h1> {{ title }}</h1>
             <hr>
             <!-- INPUT -->
@@ -39,24 +39,25 @@
                 </button>
             </div>
             <!-- LIST -->
-          </div>
             <div class="todo-list-div">
                 <ul class="todo-list">
                     <li 
-                    class = "todo-element"
-                    v-for="(todoElement,index) in todoList"> 
-                        {{todoList[index].task}} 
+                    class = "todo-element d-flex justify-content-between"
+                    v-for="(todoElement, index) in todoList"
+                    :class ="(todoElement.done == true) ? 'strike-element' : ''"> 
+                    {{todoElement.task}} 
+                    
+                    <span class="cursor-pointer">
+                        <i 
+                        class="bi bi-x-circle-fill"
+                        @click="deleteTask(index)">
+                        </i>
+                    </span>
 
-                        <span
-                        class="span-done"
-                        id="spanDone">
-                            {{todoList[index].done}} 
-                            <i class="bi bi-x-circle-fill"
-                            @click="deleteTask(index)"></i>
-                        </span>
                     </li>
-                </ul>
+                 </ul>
             </div>
+        </div>
         
         
         
